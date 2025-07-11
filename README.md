@@ -1,11 +1,11 @@
-# Mise-en-place-d-un-VPC-Peering-entre-02-Serveurs
-Mise en place d'un VPC-Peering entre 02 Serveurs dans 02 zones de disponibilités
+# Mise-en-place-d-un-VPC-Peering-entre-02-Réseaux
+Mise en place d'un VPC-Peering entre 02 Réseaux dans 02 zones de disponibilités
 
 VPC Peering entre 2 VPC AWS
 Connexion sécurisée entre environnements réseau isolés
 Mise en place d'une communication privée entre deux VPCs dans la même région AWS
 
-📌 Objectifs du projet
+ Objectifs du projet
 Établir une connexion privée entre deux VPCs distincts
 
 Permettre la communication inter-VPC sans passer par Internet
@@ -14,16 +14,14 @@ Maintenir l'isolation réseau tout en autorisant des échanges contrôlés
 
 Configurer des routes spécifiques pour le trafic peering
 
-🔧 Stack technique
+ Stack technique
 Composant	Description
 VPCA	VPC principal (12.0.0.0/16)
 VPCB	VPC secondaire (13.0.0.0/16)
 VPC Peering	Connexion directe entre VPCA et VPCB
 EC2	Instances Ubuntu avec Apache
 Route Tables	Tables de routage personnalisées
-🏗️ Architecture
 
-Diagram(in file)
 Détails clés :
 
 Plages IP non chevauchantes : 12.0.0.0/16 et 13.0.0.0/16
@@ -34,7 +32,7 @@ Tables de routage mises à jour pour le trafic peering
 
 Sécurité : Communication directe sans exposition publique
 
-🛠️ Implémentation étape par étape
+ Implémentation étape par étape
 
 1. Création des VPCs
 bash
@@ -71,7 +69,7 @@ VPCA : Instance Ubuntu avec Apache (User Data)
 
 VPCB : Instance Ubuntu avec Apache (User Data)
 
-🔐 Bonnes pratiques implémentées
+Bonnes pratiques implémentées
 Séparation claire des plages IP
 
 Contrôle granulaire via les tables de routage
@@ -80,7 +78,7 @@ Nommage cohérent des ressources
 
 Documentation complète des flux autorisés
 
-🧪 Validation du peering
+Validation du peering
 Se connecter à l'instance VPCA via SSH
 
 Tester la connectivité vers VPCB :
@@ -88,12 +86,13 @@ Tester la connectivité vers VPCB :
 bash
 ping 13.0.1.10 # IP privée de l'instance VPCB
 curl http://13.0.1.10 # Test du serveur Apache
+
 📚 Ressources
 Guide complet du lab
 
 Documentation AWS VPC Peering
 
-🚀 Améliorations possibles
+Améliorations possibles
 Ajouter un schéma détaillé des flux réseau
 
 Automatiser avec Terraform/CloudFormation
