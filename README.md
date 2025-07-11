@@ -102,21 +102,6 @@ Implémenter des règles de sécurité supplémentaires
 
 Configurer le monitoring avec VPC Flow Logs
 
-📂 Structure recommandée du dépôt
-text
-vpc-peering-lab/
-├── diagrams/
-│   ├── architecture.png          # Schéma principal
-│   └── network-flows.drawio     # Fichier source des diagrammes
-├── docs/
-│   ├── lab-guide-fr.pdf         # Instructions détaillées
-│   └── technical-decisions.md   # Justifications des choix techniques
-├── scripts/
-│   ├── test-connectivity.sh     # Script de validation
-│   └── cleanup-resources.sh     # Nettoyage AWS
-└── README.md                    # Ce fichier
-
-💡 Pour aller plus loin
 Exemple de script de test (scripts/test-connectivity.sh) :
 
 bash
